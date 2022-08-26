@@ -1,0 +1,20 @@
+<div class="container-fluid info-section">
+    <div class="container">
+        <h2 class="title-section header">Experiencia <a><i class="fa fa-plus"></i></a></h2>
+        <div class="row" *ngFor="let trabajo of experienceData">
+            <div class="col-sm-12 col-lg-2 img">
+                <img [src]="trabajo.imgurl">
+            </div>
+            <div class="col">
+                <h4>{{trabajo.position}}<a><i class="fa fa-trash rounded float-end delete-card"></i></a></h4>
+                <p class="period">{{trabajo.period}}</p>
+                <p class="work-description">{{trabajo.description}}</p>
+            </div>
+            
+        </div>
+
+        
+    </div>
+
+</div>
+<hr>

@@ -1,0 +1,62 @@
+<hr>
+    <div class="container">
+        <div class="row">
+            <div class="col sm-12 section">
+                <div class="container header">
+                    <h2 class="title-section">Certificaciones</h2>
+                    <a><i class="fa fa-plus"></i></a>
+                </div>
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner" >
+                        <div *ngFor="let cert of certificationsData">
+                            <div *ngIf="cert == certificationsData[0]" class="carousel-item active">
+                                <img [src]="cert.imgurl" class="d-block w-100" alt="Imagen de un certificado">
+                            </div>
+                        </div>
+                        <div *ngFor="let certificado of certificationsData">
+                            <div class="carousel-item" *ngIf="certificado != certificationsData[0]">
+                                <img [src]="certificado.imgurl" class="d-block w-100" alt="Imagen de un certificado">
+                              </div>
+                        </div>
+                      
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                
+            </div>
+            <div class="col sm-12 section">
+                <div class="container header">
+                    <h2 class="title-section">Proyectos</h2>
+                    <a><i class="fa fa-plus"></i></a>
+                </div>
+                
+                <div id="scroll">
+
+                        <div class="texto">
+                            <div class="card" style="width: 100%;" *ngFor="let proyecto of projectsData">
+                                <div class="row no-gutters">
+                                    <div class="col-sm-7 cont-img">
+                                        <img class="card-img" [src]="proyecto.imgurl" alt="Imagen sobre un proyecto">
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{proyecto.title}}<i class="fa fa-trash rounded float-end delete-card"></i> </h5>
+                                            <p class="card-subtitle text-muted">{{proyecto.date}}</p>
+                                            <p class="card-text">{{proyecto.description}}</p>
+                                            <a [href]="proyecto.githublink" target="_blank" class="btn btn-dark mt-3">Ver código  <i class="fa fa-github"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                                                            
+                    </div>
+                </div>
+            </div>   
+        </div> 
+    </div>
